@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<flowGraph xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="6fdfbe05-093a-4a6c-a501-09552c161941" name="" xmlns="http://schemas.microsoft.com/dsltools/xDSL200506">
+  <comments>
+    <comment Id="6f3dbe3c-22c3-41e8-b655-cbb1563c183a" text="A Comment">
+      <subjects>
+        <taskMoniker name="//AI/Gather Data" />
+      </subjects>
+    </comment>
+  </comments>
+  <actors>
+    <actor Id="b0047984-e4af-4167-8837-b6de116d714f" name="Client">
+      <flowElements>
+        <startPoint Id="c5362297-b48e-4ba0-b085-5426c69e287c" name="Initial Desire">
+          <flowTo>
+            <flow Id="61b858d8-1da2-449a-9961-eb7b6a05f9fd">
+              <taskMoniker name="//Client/Desire" />
+            </flow>
+          </flowTo>
+        </startPoint>
+        <task Id="474216e0-4a8d-4b08-89a8-987c30a8bb03" name="Desire" description="Le client désire créer quelque chose" sort="SuperTask">
+          <flowTo>
+            <flow Id="679c81ed-fb46-4cbd-8fc5-6d564ce49170">
+              <mergeBranchMoniker name="//AI/Evaluate" />
+            </flow>
+          </flowTo>
+        </task>
+        <task Id="f8109847-f84f-40b2-9936-e974e5720c8e" name="Researching Project">
+          <flowTo>
+            <flow Id="406d0e3a-eaac-4b07-877a-356441b8979e">
+              <synchronizationMoniker name="//Client/Synchronization1" />
+            </flow>
+          </flowTo>
+        </task>
+        <synchronization Id="9a21c58a-4eb6-4742-93a4-fae05088eed1" name="Synchronization1">
+          <flowTo>
+            <flow Id="d332cf31-123c-4d10-9a73-77f654004070">
+              <endpointMoniker name="//Client/Informad" />
+            </flow>
+          </flowTo>
+        </synchronization>
+        <endpoint Id="d0699d4d-e83d-4d00-9996-46e778844a59" name="Informad" />
+        <objectInState Id="50bc82e5-2f3f-4c41-a0f2-94b1b1da35d4" name="Desire" state="Unresolved" />
+      </flowElements>
+    </actor>
+    <actor Id="e7ce2e04-f270-4a8d-915d-bfb1b689b457" name="AI">
+      <flowElements>
+        <task Id="ba96cb2a-3c83-4818-a7d9-77e06350c734" name="Gather Data" description="The gathering of data to resolve starts">
+          <flowTo>
+            <flow Id="c9663a70-346c-49cd-a8f9-7126c24b2dd6" guard="ResolvingData">
+              <synchronizationMoniker name="//Client/Synchronization1" />
+            </flow>
+            <flow Id="0e91dab3-3bcd-4d79-bd6f-c1c84f8a3e67">
+              <taskMoniker name="//Jean/Advise Desire" />
+            </flow>
+          </flowTo>
+        </task>
+        <mergeBranch Id="7d7a90dd-c96c-4533-9dd0-d9c8b69cdb2c" name="Evaluate" description="Do the desire has been furfilled?">
+          <flowTo>
+            <flow Id="fcb0c199-b978-496d-999f-bb7611671a0a" guard="No">
+              <taskMoniker name="//Client/Researching Project" />
+            </flow>
+            <flow Id="3d7d0810-197e-472e-bb7f-08410cfec0b0" guard="Yes">
+              <taskMoniker name="//AI/Gather Data" />
+            </flow>
+          </flowTo>
+        </mergeBranch>
+      </flowElements>
+    </actor>
+    <actor Id="687cf88b-b304-4b77-85dd-656cb05962a5" name="Jean">
+      <flowElements>
+        <task Id="46216706-1b70-4df8-a3a4-6165c515a12c" name="Advise Desire">
+          <flowTo>
+            <flow Id="bf6c1956-ea55-4403-b2c7-22e2b253b7b1">
+              <endpointMoniker name="//Jean/Advised" />
+            </flow>
+          </flowTo>
+        </task>
+        <endpoint Id="df87a50a-d64c-40e9-b459-346210a6d319" name="Advised" />
+        <objectInState Id="e977119d-62ca-458e-8918-0f523e6c0c6d" name="Desire" state="Resolved" />
+      </flowElements>
+    </actor>
+  </actors>
+</flowGraph>

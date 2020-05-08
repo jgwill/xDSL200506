@@ -1,0 +1,16 @@
+﻿
+Generated material. Generating code in VB.
+
+
+		Client
+			StartPoint1
+			Desire
+			Researching Project
+			Synchronization1
+			Informad
+		AI
+			Gather Data
+			Evaluate
+		Jean
+			Advise Desire
+			Advised

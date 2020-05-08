@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xDSL200506Diagram dslVersion="1.0.0.0" Id="bffe361f-b604-4479-8890-37f2f96154d1" absoluteBounds="0, 0, 11.375, 8.5" name="Sample">
+  <flowGraphMoniker name="/" />
+  <nestedChildShapes>
+    <actorSwimLane Id="29cfbea2-7526-43ba-9292-4f9f50401fb0" absoluteBounds="0, 0, 3.375, 8.5">
+      <actorMoniker name="//Client" />
+      <nestedChildShapes>
+        <startShape Id="8fa4ae6b-2b53-4e43-a548-472745f52271" absoluteBounds="0.5, 0.5, 0.25, 0.25">
+          <startPointMoniker name="//Client/Initial Desire" />
+        </startShape>
+        <taskShape Id="a67a4f30-43a3-49b6-88bc-1ab7765b9131" absoluteBounds="1.25, 0.875, 1.25, 0.375">
+          <taskMoniker name="//Client/Desire" />
+        </taskShape>
+        <taskShape Id="b5b7b559-1b92-478d-be7c-4b99f285fb9b" absoluteBounds="1.25, 3.125, 1.25, 0.375">
+          <taskMoniker name="//Client/Researching Project" />
+        </taskShape>
+        <syncBarShape Id="959d94b4-2f44-4b62-b526-3a9bd7750873" absoluteBounds="2.125, 4.75, 1, 0.125">
+          <synchronizationMoniker name="//Client/Synchronization1" />
+        </syncBarShape>
+        <flowConnector Id="23d4b1e8-8591-4fbd-83ed-0fe474f8bf27" edgePoints="[(0.75 : 0.625); (1.875 : 0.625); (1.875 : 0.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+          <flowMoniker Id="61b858d8-1da2-449a-9961-eb7b6a05f9fd" />
+          <relativeChildShapes />
+          <nodes>
+            <startShapeMoniker Id="8fa4ae6b-2b53-4e43-a548-472745f52271" />
+            <taskShapeMoniker Id="a67a4f30-43a3-49b6-88bc-1ab7765b9131" />
+          </nodes>
+        </flowConnector>
+        <flowConnector Id="34d271ec-be6a-4cc0-a3a9-6584350b9c1d" edgePoints="[(2.3125 : 3.5); (2.3125 : 4.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+          <flowMoniker Id="406d0e3a-eaac-4b07-877a-356441b8979e" />
+          <relativeChildShapes />
+          <nodes>
+            <taskShapeMoniker Id="b5b7b559-1b92-478d-be7c-4b99f285fb9b" />
+            <syncBarShapeMoniker Id="959d94b4-2f44-4b62-b526-3a9bd7750873" />
+          </nodes>
+        </flowConnector>
+        <endShape Id="0be13646-54f8-43fe-885b-55947b60e523" absoluteBounds="2.5, 6, 0.25, 0.25">
+          <endpointMoniker name="//Client/Informad" />
+        </endShape>
+        <flowConnector Id="31a7c7e8-2d33-415d-866b-3c3f9e9718b5" edgePoints="[(2.625 : 4.875); (2.625 : 6)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+          <flowMoniker Id="d332cf31-123c-4d10-9a73-77f654004070" />
+          <relativeChildShapes />
+          <nodes>
+            <syncBarShapeMoniker Id="959d94b4-2f44-4b62-b526-3a9bd7750873" />
+            <endShapeMoniker Id="0be13646-54f8-43fe-885b-55947b60e523" />
+          </nodes>
+        </flowConnector>
+        <objectShape Id="7164e98f-189b-4d75-b37e-374f6c1e2fbc" absoluteBounds="0.625, 5.125, 1.25, 0.375">
+          <objectInStateMoniker name="//Client/Desire" />
+        </objectShape>
+      </nestedChildShapes>
+    </actorSwimLane>
+    <actorSwimLane Id="0888818a-cdff-4dd8-aad3-4fd10b813e38" absoluteBounds="3.375, 0, 2.25, 8.5">
+      <actorMoniker name="//AI" />
+      <nestedChildShapes>
+        <taskShape Id="1dc070fd-8704-4943-913d-9ccc6cef9d1a" absoluteBounds="3.75, 2.875, 1.25, 0.375">
+          <taskMoniker name="//AI/Gather Data" />
+        </taskShape>
+        <mergeBranchShape Id="78adf133-2b90-4ce4-aa0c-aeba152cc8d3" absoluteBounds="3.75, 1.5, 0.5, 0.3">
+          <mergeBranchMoniker name="//AI/Evaluate" />
+        </mergeBranchShape>
+        <flowConnector Id="43f6055c-5835-4044-9e87-d011b523f18f" edgePoints="[(4 : 1.8); (4 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+          <flowMoniker Id="3d7d0810-197e-472e-bb7f-08410cfec0b0" />
+          <relativeChildShapes />
+          <nodes>
+            <mergeBranchShapeMoniker Id="78adf133-2b90-4ce4-aa0c-aeba152cc8d3" />
+            <taskShapeMoniker Id="1dc070fd-8704-4943-913d-9ccc6cef9d1a" />
+          </nodes>
+        </flowConnector>
+      </nestedChildShapes>
+    </actorSwimLane>
+    <actorSwimLane Id="88be7db9-fe2c-4185-9bb0-d4299e0280e3" absoluteBounds="5.625, 0, 5.75, 8.5">
+      <actorMoniker name="//Jean" />
+      <nestedChildShapes>
+        <taskShape Id="3c06ec07-b376-4723-a917-3e91094dda10" absoluteBounds="7.125, 1.125, 1.25, 0.375">
+          <taskMoniker name="//Jean/Advise Desire" />
+        </taskShape>
+        <endShape Id="a1b53a17-1db5-49e6-aeb5-b3444f3b26bb" absoluteBounds="9.875, 1.25, 0.25, 0.25">
+          <endpointMoniker name="//Jean/Advised" />
+        </endShape>
+        <flowConnector Id="faf09f7d-175d-48b3-a8af-dd29c7b45cf4" edgePoints="[(8.375 : 1.375); (9.875 : 1.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+          <flowMoniker Id="bf6c1956-ea55-4403-b2c7-22e2b253b7b1" />
+          <relativeChildShapes />
+          <nodes>
+            <taskShapeMoniker Id="3c06ec07-b376-4723-a917-3e91094dda10" />
+            <endShapeMoniker Id="a1b53a17-1db5-49e6-aeb5-b3444f3b26bb" />
+          </nodes>
+        </flowConnector>
+        <objectShape Id="6d304b16-2402-4c0e-ba55-8cc14560970c" absoluteBounds="7.125, 2.25, 1.25, 0.375">
+          <objectInStateMoniker name="//Jean/Desire" />
+        </objectShape>
+      </nestedChildShapes>
+    </actorSwimLane>
+    <commentBoxShape Id="829ff3a2-b441-44c3-aac7-81ac6f6d3a63" absoluteBounds="5.625, 3.625, 1.5, 0.25">
+      <commentMoniker Id="6f3dbe3c-22c3-41e8-b655-cbb1563c183a" />
+    </commentBoxShape>
+    <commentConnector Id="362634ac-a61f-46f3-8683-403de23c10b2" edgePoints="[(5.625 : 3.625); (5 : 3.25)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="f73f45e9-6d16-4137-b62e-46dbca9660e5">
+      <nodes>
+        <commentBoxShapeMoniker Id="829ff3a2-b441-44c3-aac7-81ac6f6d3a63" />
+        <taskShapeMoniker Id="1dc070fd-8704-4943-913d-9ccc6cef9d1a" />
+      </nodes>
+    </commentConnector>
+    <flowConnector Id="7fd4ada9-08c6-4e6a-96bc-f20d6190b1b4" edgePoints="[(4.375 : 3.25); (4.375 : 4.8125); (3.125 : 4.8125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <flowMoniker Id="c9663a70-346c-49cd-a8f9-7126c24b2dd6" />
+      <relativeChildShapes />
+      <nodes>
+        <taskShapeMoniker Id="1dc070fd-8704-4943-913d-9ccc6cef9d1a" />
+        <syncBarShapeMoniker Id="959d94b4-2f44-4b62-b526-3a9bd7750873" />
+      </nodes>
+    </flowConnector>
+    <flowConnector Id="8ad94a81-5712-4c3b-9067-e9cb2601a11e" edgePoints="[(4.65625 : 2.875); (4.65625 : 1.28125); (7.125 : 1.28125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <flowMoniker Id="0e91dab3-3bcd-4d79-bd6f-c1c84f8a3e67" />
+      <relativeChildShapes />
+      <nodes>
+        <taskShapeMoniker Id="1dc070fd-8704-4943-913d-9ccc6cef9d1a" />
+        <taskShapeMoniker Id="3c06ec07-b376-4723-a917-3e91094dda10" />
+      </nodes>
+    </flowConnector>
+    <flowConnector Id="f834a367-8b64-463d-b057-0bd328a72ad4" edgePoints="[(2.5 : 1.0625); (4 : 1.0625); (4 : 1.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <flowMoniker Id="679c81ed-fb46-4cbd-8fc5-6d564ce49170" />
+      <relativeChildShapes />
+      <nodes>
+        <taskShapeMoniker Id="a67a4f30-43a3-49b6-88bc-1ab7765b9131" />
+        <mergeBranchShapeMoniker Id="78adf133-2b90-4ce4-aa0c-aeba152cc8d3" />
+      </nodes>
+    </flowConnector>
+    <flowConnector Id="690683e5-7016-43f9-aa4a-a8aafe762b29" edgePoints="[(3.75 : 1.65); (1.875 : 1.65); (1.875 : 3.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <flowMoniker Id="fcb0c199-b978-496d-999f-bb7611671a0a" />
+      <relativeChildShapes />
+      <nodes>
+        <mergeBranchShapeMoniker Id="78adf133-2b90-4ce4-aa0c-aeba152cc8d3" />
+        <taskShapeMoniker Id="b5b7b559-1b92-478d-be7c-4b99f285fb9b" />
+      </nodes>
+    </flowConnector>
+  </nestedChildShapes>
+</xDSL200506Diagram>

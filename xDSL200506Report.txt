@@ -1,0 +1,29 @@
+﻿
+Generated material. Generating code in C#.
+
+
+		Client
+			Initial Desire  
+										(   )
+			Desire  
+										(Le client désire créer quelque chose   )
+			Researching Project  
+										(   )
+			Synchronization1  
+										(   )
+			Informad  
+										(   )
+			Desire  
+										(   )
+		AI
+			Gather Data  
+										(The gathering of data to resolve starts   )
+			Evaluate  
+										(Do the desire has been furfilled?   )
+		Jean
+			Advise Desire  
+										(   )
+			Advised  
+										(   )
+			Desire  
+										(   )

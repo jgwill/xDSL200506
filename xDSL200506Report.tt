@@ -1,0 +1,23 @@
+﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
+<#@ output extension=".txt" #>
+<#@ xDSL200506 processor="xDSL200506DirectiveProcessor" requires="fileName='Sample.xDSL200506'" #>
+
+Generated material. Generating code in C#.
+
+
+<#
+	foreach (Actor eachActor in this.FlowGraph.Actors)
+	{
+#>
+		<#= eachActor.Name #>
+<#
+	
+		foreach (FlowElement eacheElement in eachActor.FlowElements)
+		{
+#>
+			<#= eacheElement.Name #>  
+										(<#= eacheElement.Description #>   )
+<#
+		}
+	}
+#>

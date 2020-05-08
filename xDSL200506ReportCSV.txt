@@ -1,0 +1,15 @@
+﻿
+Generated material. Generating code in C#.
+
+Role;Nom;Description
+Client;"Initial Desire";""
+Client;"Desire";"Le client désire créer quelque chose"
+Client;"Researching Project";""
+Client;"Synchronization1";""
+Client;"Informad";""
+Client;"Desire";""
+AI;"Gather Data";"The gathering of data to resolve starts"
+AI;"Evaluate";"Do the desire has been furfilled?"
+Jean;"Advise Desire";""
+Jean;"Advised";""
+Jean;"Desire";""
